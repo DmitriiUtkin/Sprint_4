@@ -6,9 +6,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import java.util.List;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
@@ -54,8 +52,6 @@ public class DropdownListParametrizedTest {
     public void testDropdownList() {
         HomePage homePage = new HomePage(driver);
         List<WebElement> questionsList = homePage.getQuestions();
-        List<WebElement> answersList = homePage.getAnswers();
-
         for (int i = 0; i < questionsList.size(); i++) {
             if (questionsList.get(i).getText().equals(question)) {
                 homePage.clickQuestionByIndex(i);
